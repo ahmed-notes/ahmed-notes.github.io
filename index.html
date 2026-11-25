@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0b1020">
@@ -47,6 +47,7 @@
   <section class="hero">
     <div class="orb o1" aria-hidden="true"></div>
     <div class="orb o2" aria-hidden="true"></div>
+    <canvas id="hero3d" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <p class="eyebrow reveal"><span class="pulse"></span> قيد التأسيس</p>
       <h1 class="reveal">مساحة <span class="grad">أحمد</span> الرقمية،<br>تُبنى بهدوء.</h1>
@@ -150,5 +151,6 @@
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
+<script src="js/hero3d.js"></script>
 </body>
 </html>
