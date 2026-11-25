@@ -1,1 +1,154 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ahmed Notes</title><style>body{font-family:system-ui,sans-serif;max-width:720px;margin:10vh auto;padding:0 1rem;line-height:1.7;color:#222}h1{font-size:2.2rem}a{color:#0a66c2}</style></head><body><h1>أحمد نوتس</h1><p>موقعي الشخصي: محاضرات، أدوات، وتوثيق لشغلي. قريبًا.</p><p dir="ltr">Ahmed Notes: lectures, tools and my work log. Coming soon.</p></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0b1020">
+<title>أحمد نوتس</title>
+<meta name="description" content="Ahmed Notes: personal space, coming soon.">
+<meta property="og:title" content="أحمد نوتس">
+<meta property="og:description" content="مساحة شخصية قيد التأسيس.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahmed-notes.github.io/">
+<link rel="canonical" href="https://ahmed-notes.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/extra.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="أحمد نوتس">
+    <span class="logo">أ</span><span class="brand-text">أحمد <b>نوتس</b></span>
+  </a>
+  <nav class="links" id="links" aria-label="التنقل الرئيسي">
+    <a href="#study">الدراسة</a>
+    <a href="#work">العمل الحر</a>
+    <a href="#projects">المشاريع</a>
+    <a href="#vault">الخزنة</a>
+    <a href="#contact">تواصل</a>
+  </nav>
+  <div class="actions">
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="تبديل الوضع الليلي والنهاري" title="الوضع">◐</button>
+    <button class="icon-btn" id="cmdBtn" type="button" aria-label="بحث سريع" title="بحث (Ctrl+K)">⌕</button>
+    <button class="icon-btn burger" id="burger" type="button" aria-label="القائمة" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="orb o1" aria-hidden="true"></div>
+    <div class="orb o2" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal"><span class="pulse"></span> قيد التأسيس</p>
+      <h1 class="reveal">مساحة <span class="grad">أحمد</span> الرقمية،<br>تُبنى بهدوء.</h1>
+      <p class="lead reveal">هذه واجهة جاهزة. المحتوى سيُضاف لاحقًا بما يختاره صاحب الموقع فقط.</p>
+      <div class="cta reveal">
+        <a class="btn primary magnetic" href="#vault">الخزنة الخاصة <span aria-hidden="true">←</span></a>
+        <a class="btn ghost magnetic" href="#projects">المشاريع</a>
+        <button class="btn ghost magnetic" id="shareBtn" type="button">شارك الموقع</button>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#study" aria-label="انزل للأسفل"><span></span></a>
+  </section>
+
+  <section id="study" class="section alt">
+    <div class="wrap">
+      <div class="head reveal"><p class="kicker">الدراسة</p><h2 class="split">المواد والملخصات</h2></div>
+      <div class="courses" id="courses"></div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="head reveal"><p class="kicker">العمل الحر</p><h2 class="split">الخدمات</h2></div>
+      <div class="services" id="services"></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section alt">
+    <div class="wrap">
+      <div class="head reveal"><p class="kicker">المشاريع</p><h2 class="split">الأعمال</h2></div>
+      <div class="projects" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <section id="vault" class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">الخزنة الخاصة</p>
+        <h2 class="split">ملفاتك، مشفّرة داخل متصفحك</h2>
+        <p class="muted">التشفير والفك يحدثان على جهازك فقط. لا يُرفع شيء ولا تُحفظ كلمة السر في أي مكان.</p>
+      </div>
+      <div class="vault-grid">
+        <form class="card vcard reveal" id="encForm" autocomplete="off">
+          <h3>١. تشفير ملف</h3>
+          <label class="fld"><span>الملف (حتى 50 ميجا)</span><input type="file" id="encFile" required></label>
+          <label class="fld"><span>كلمة السر (10 أحرف على الأقل)</span><input type="password" id="encPw" minlength="10" required autocomplete="new-password"></label>
+          <div class="strength" aria-hidden="true"><i id="strBar"></i></div>
+          <label class="fld"><span>أعد كتابتها</span><input type="password" id="encPw2" minlength="10" required autocomplete="new-password"></label>
+          <button class="btn primary magnetic" type="submit">شفّر ونزّل الملف</button>
+          <p class="vstat" id="encStat" role="status"></p>
+        </form>
+        <form class="card vcard reveal" id="decForm" autocomplete="off">
+          <h3>٢. فتح ملف مشفّر</h3>
+          <label class="fld"><span>ملف بامتداد .enc</span><input type="file" id="decFile" accept=".enc" required></label>
+          <label class="fld"><span>كلمة السر</span><input type="password" id="decPw" required autocomplete="current-password"></label>
+          <button class="btn primary magnetic" type="submit">افتح</button>
+          <p class="vstat" id="decStat" role="status"></p>
+          <div class="vout" id="vout"></div>
+        </form>
+      </div>
+      <ul class="vnotes reveal">
+        <li>التشفير: AES-256-GCM ومفتاح من كلمة السر عبر PBKDF2 (600 ألف دورة). كل ملف له ملح وIV عشوائي.</li>
+        <li>إن نسيت كلمة السر فلا يمكن استرجاع الملف. لا يوجد أي مفتاح احتياطي.</li>
+        <li>الحماية بقدر قوة كلمة السر. كلمة ضعيفة يمكن تخمينها دون اتصال إن حصل أحدهم على الملف المشفّر.</li>
+        <li>الأفضل إبقاء الملفات المشفّرة عندك (حاسوب أو تخزين خاص). رفعها على مستودع عام يجعل نسختها المشفّرة متاحة للجميع.</li>
+        <li>لا ترفع كتبًا أو مواد جامعية محمية بحقوق النشر حتى لو كانت مشفّرة.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="wrap">
+      <div class="head reveal"><p class="kicker">تواصل</p><h2 class="split">التواصل</h2></div>
+      <div class="empty-state reveal"><span class="ring" aria-hidden="true"></span><h3>لا توجد وسائل تواصل منشورة حاليًا</h3><p class="muted">ستُضاف عندما يقرر صاحب الموقع ذلك.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><p>© <span id="year"></span> أحمد نوتس</p><p class="muted"><a href="#top">للأعلى ↑</a></p></footer>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="icon-btn close" type="button" data-close aria-label="إغلاق">✕</button>
+    <div class="m-head"><span class="m-ico" id="mIco"></span><div><h3 id="mTitle"></h3><p class="muted" id="mSub"></p></div></div>
+    <div class="m-tags" id="mTags"></div>
+    <ul class="notes" id="mNotes"></ul>
+  </div>
+</div>
+
+<div class="cmd" id="cmd" hidden>
+  <div class="modal-backdrop" data-close-cmd></div>
+  <div class="cmd-card" role="dialog" aria-modal="true" aria-label="بحث سريع">
+    <input id="cmdInput" type="search" placeholder="اكتب للبحث: مادة، مشروع، قسم..." autocomplete="off">
+    <ul id="cmdList"></ul>
+    <p class="muted hint">Esc للإغلاق • Enter للانتقال</p>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
