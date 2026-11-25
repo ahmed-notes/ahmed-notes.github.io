@@ -322,7 +322,10 @@
 
   /* animated network background (no libraries) */
   (function () {
-    var cv = $("#bg"), ctx = cv.getContext("2d"), pts = [], W, H, mouse = { x: -999, y: -999 };
+    var cv = $("#bg"), ctx = cv.getContext("2d"), pts = [], W, H, mouse = { x: -999, y: -999 }, asleep = false;
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && asleep) { asleep = false; requestAnimationFrame(draw); }
+    });
     function size() { var d = Math.min(devicePixelRatio || 1, 2); W = cv.width = innerWidth * d; H = cv.height = innerHeight * d; ctx.setTransform(d, 0, 0, d, 0, 0); W /= d; H /= d; }
     function init() { size(); pts = []; var n = Math.min(70, Math.floor(innerWidth / 18)); for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 }); }
     function col() { return getComputedStyle(root).getPropertyValue("--a").trim() || "#6ee7d4"; }
@@ -341,7 +344,7 @@
         var mx = p.x - mouse.x, my = p.y - mouse.y, md = mx * mx + my * my;
         if (md < 20000) { ctx.globalAlpha = (1 - md / 20000) * .5; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
       });
-      requestAnimationFrame(draw);
+      if (!document.hidden) requestAnimationFrame(draw); else asleep = true;
     }
     init(); window.addEventListener("resize", init);
     window.addEventListener("pointermove", function (e) { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
