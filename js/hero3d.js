@@ -89,7 +89,8 @@
     base += 0.0035;
     ex += (mx * 0.45 - ex) * 0.05;
     ey += (my * 0.35 - ey) * 0.05;
-    frame(base + ex, 0.42 + ey);
+    var sy = window.scrollY || 0;
+    frame(base + ex + sy * 0.0012, 0.42 + ey + Math.min(sy * 0.0004, 0.35));
     if (running) requestAnimationFrame(loop);
   }
   function start() {
