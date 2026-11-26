@@ -351,10 +351,10 @@
         if (md < 20000) { ctx.globalAlpha = (1 - md / 20000) * .5; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
       });
       for (var pi = pulses.length - 1; pi >= 0; pi--) {
-        var pu = pulses[pi]; pu.r += 3.2;
-        var pa = 1 - pu.r / 240;
+        var pu = pulses[pi]; pu.r += 2.6;
+        var pa = 1 - pu.r / 280;
         if (pa <= 0) { pulses.splice(pi, 1); continue; }
-        ctx.globalAlpha = pa * .4; ctx.beginPath(); ctx.arc(pu.x, pu.y, pu.r, 0, 6.3); ctx.stroke();
+        ctx.globalAlpha = pa * .6; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(pu.x, pu.y, pu.r, 0, 6.3); ctx.stroke(); ctx.lineWidth = 1;
       }
       if (!document.hidden) requestAnimationFrame(draw); else asleep = true;
     }
