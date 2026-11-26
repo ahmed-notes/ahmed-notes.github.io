@@ -323,6 +323,12 @@
   /* animated network background (no libraries) */
   (function () {
     var cv = $("#bg"), ctx = cv.getContext("2d"), pts = [], W, H, mouse = { x: -999, y: -999 }, asleep = false;
+    var pulses = [];
+    window.addEventListener("pointerdown", function (e) {
+      if (reduce) return;
+      pulses.push({ x: e.clientX, y: e.clientY, r: 0 });
+      if (pulses.length > 6) pulses.shift();
+    }, { passive: true });
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden && asleep) { asleep = false; requestAnimationFrame(draw); }
     });
@@ -344,6 +350,12 @@
         var mx = p.x - mouse.x, my = p.y - mouse.y, md = mx * mx + my * my;
         if (md < 20000) { ctx.globalAlpha = (1 - md / 20000) * .5; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
       });
+      for (var pi = pulses.length - 1; pi >= 0; pi--) {
+        var pu = pulses[pi]; pu.r += 3.2;
+        var pa = 1 - pu.r / 240;
+        if (pa <= 0) { pulses.splice(pi, 1); continue; }
+        ctx.globalAlpha = pa * .4; ctx.beginPath(); ctx.arc(pu.x, pu.y, pu.r, 0, 6.3); ctx.stroke();
+      }
       if (!document.hidden) requestAnimationFrame(draw); else asleep = true;
     }
     init(); window.addEventListener("resize", init);
