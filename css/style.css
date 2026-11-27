@@ -66,7 +66,7 @@ h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.35;font-weight:800;letter-sp
 @keyframes wheel{to{transform:translateY(14px);opacity:0}}
 
 /* sections */
-.section{padding:100px 20px;position:relative}
+.section{padding:100px 20px;position:relative;content-visibility:auto;contain-intrinsic-size:auto 480px}
 .section.alt{background:linear-gradient(180deg,transparent,var(--bg2),transparent)}
 .wrap{max-width:1100px;margin-inline:auto}
 .head{margin-bottom:36px}
