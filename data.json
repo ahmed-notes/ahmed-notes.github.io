@@ -1,0 +1,61 @@
+{
+  "updated": "2026-11-27T16:00:00+02:00",
+  "platforms": {
+    "youtube": { "status": "connected" },
+    "instagram": { "status": "connected", "handle": "halfnhalf_toons", "url": "https://www.instagram.com/halfnhalf_toons/" },
+    "tiktok": { "status": "review", "note": "المنشورات قيد المراجعة" },
+    "facebook": {
+      "status": "connected",
+      "accounts": [
+        { "name": "صفحة كرة القدم", "url": "https://www.facebook.com/profile.php?id=61597107325340" }
+      ]
+    },
+    "x": { "status": "connected", "handle": "halfnhalf_toons", "url": "https://x.com/halfnhalf_toons" }
+  },
+  "published": [
+    {
+      "id": "E01",
+      "title": "ستيكمان — الحلقة ١",
+      "date": "2026-11-27",
+      "best": false,
+      "links": {
+        "youtube": "https://youtube.com/shorts/uW9SmVA8DGg",
+        "x": "https://x.com/halfnhalf_toons/status/2126306418215280708",
+        "facebook": "https://www.facebook.com/reel/1147400451217517/",
+        "instagram": "https://www.instagram.com/halfnhalf_toons/"
+      },
+      "notes": { "instagram": "على الحساب", "tiktok": "قيد المراجعة" }
+    },
+    {
+      "id": "V0001",
+      "title": "الأخطبوط",
+      "date": "2026-11-27",
+      "best": false,
+      "links": {
+        "youtube": "https://youtube.com/shorts/_wWERIlJOZw",
+        "instagram": "https://www.instagram.com/halfnhalf_toons/reel/DgPlYbmSGBy/",
+        "x": "https://x.com/halfnhalf_toons/status/2126306776111018343",
+        "facebook": "https://www.facebook.com/reel/1961084075301901/"
+      },
+      "notes": { "tiktok": "قيد المراجعة" }
+    },
+    {
+      "id": "FOOT-2026-11-27",
+      "title": "كرة القدم — ٤ منشورات اليوم",
+      "date": "2026-11-27",
+      "links": { "facebook": "https://www.facebook.com/profile.php?id=61597107325340" },
+      "notes": { "facebook": "جدولة يومية: ١٠ منشورات" }
+    }
+  ],
+  "scheduled": [
+    {
+      "id": "V0114",
+      "title": "الشتاء",
+      "date": "2026-11-28",
+      "platforms": ["youtube", "instagram", "tiktok", "facebook", "x"]
+    }
+  ],
+  "failed": [],
+  "queue": [],
+  "errors": []
+}
