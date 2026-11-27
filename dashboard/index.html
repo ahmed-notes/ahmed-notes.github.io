@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; media-src 'none'; worker-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="dark light">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
+<a class="skip" href="#dash">تخطَّ إلى المحتوى</a>
 <header class="nav">
   <a class="brand" href="/" aria-label="أحمد نوتس">
     <span class="logo">أ</span><span class="brand-text">أحمد <b>نوتس</b></span>
@@ -26,7 +27,7 @@
   </div>
 </header>
 
-<main class="dash">
+<main class="dash" id="dash">
   <div class="wrap">
     <div class="dash-head">
       <div>
@@ -82,5 +83,6 @@
 </footer>
 
 <script src="/js/dashboard.js"></script>
+<button class="top-btn" id="topBtn" type="button" aria-label="العودة للأعلى" title="للأعلى">↑</button>
 </body>
 </html>
