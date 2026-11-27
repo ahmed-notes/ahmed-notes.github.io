@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-27T16:00:00+02:00",
+  "updated": "2026-11-27T16:05:00+02:00",
   "platforms": {
     "youtube": { "status": "connected" },
     "instagram": { "status": "connected", "handle": "halfnhalf_toons", "url": "https://www.instagram.com/halfnhalf_toons/" },
-    "tiktok": { "status": "review", "note": "المنشورات قيد المراجعة" },
+    "tiktok": { "status": "connected" },
     "facebook": {
       "status": "connected",
       "accounts": [
@@ -15,29 +15,27 @@
   "published": [
     {
       "id": "E01",
-      "title": "ستيكمان — الحلقة ١",
+      "title": "ستيكمان — الجرس اللي ما بيوقف",
       "date": "2026-11-27",
-      "best": false,
       "links": {
         "youtube": "https://youtube.com/shorts/uW9SmVA8DGg",
+        "instagram": "https://www.instagram.com/reels/DgPQ2BoyYsn/",
         "x": "https://x.com/halfnhalf_toons/status/2126306418215280708",
-        "facebook": "https://www.facebook.com/reel/1147400451217517/",
-        "instagram": "https://www.instagram.com/halfnhalf_toons/"
+        "facebook": "https://www.facebook.com/reel/1147400451217517/"
       },
-      "notes": { "instagram": "على الحساب", "tiktok": "قيد المراجعة" }
+      "notes": { "tiktok": "نُشر" }
     },
     {
       "id": "V0001",
-      "title": "الأخطبوط",
+      "title": "الأخطبوط وقلوبه الثلاثة",
       "date": "2026-11-27",
-      "best": false,
       "links": {
         "youtube": "https://youtube.com/shorts/_wWERIlJOZw",
         "instagram": "https://www.instagram.com/halfnhalf_toons/reel/DgPlYbmSGBy/",
         "x": "https://x.com/halfnhalf_toons/status/2126306776111018343",
         "facebook": "https://www.facebook.com/reel/1961084075301901/"
       },
-      "notes": { "tiktok": "قيد المراجعة" }
+      "notes": { "tiktok": "نُشر، قيد المراجعة" }
     },
     {
       "id": "FOOT-2026-11-27",
@@ -51,11 +49,24 @@
     {
       "id": "V0114",
       "title": "الشتاء",
-      "date": "2026-11-28",
+      "date": "2026-11-28 09:00",
       "platforms": ["youtube", "instagram", "tiktok", "facebook", "x"]
     }
   ],
   "failed": [],
-  "queue": [],
-  "errors": []
+  "queue": [
+    { "id": "E02", "title": "ستيكمان — الحلقة ٢" },
+    { "id": "V0082", "title": "الديك" },
+    { "title": "فيديو علمي جديد" },
+    { "title": "فيسبوك: استطلاع أو صورة حقيقة" },
+    { "title": "إكس: منشور حقيقة نصية" },
+    { "title": "إنستغرام: كاروسيل حقائق الأخطبوط" }
+  ],
+  "errors": [
+    {
+      "ts": "2026-11-27T15:55:00+02:00",
+      "platform": "facebook",
+      "message": "تعذّر تسجيل الدخول في أحد المسارات بسبب تحقق متكرر — يُتابَع عبر المسار البديل."
+    }
+  ]
 }
