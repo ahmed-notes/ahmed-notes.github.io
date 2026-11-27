@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T16:05:00+02:00",
+  "updated": "2026-11-27T20:35:00+02:00",
   "platforms": {
     "youtube": { "status": "connected" },
     "instagram": { "status": "connected", "handle": "halfnhalf_toons", "url": "https://www.instagram.com/halfnhalf_toons/" },
@@ -17,6 +17,7 @@
       "id": "E01",
       "title": "ستيكمان — الجرس اللي ما بيوقف",
       "date": "2026-11-27",
+      "kind": "خيال",
       "links": {
         "youtube": "https://youtube.com/shorts/uW9SmVA8DGg",
         "instagram": "https://www.instagram.com/reels/DgPQ2BoyYsn/",
@@ -29,6 +30,7 @@
       "id": "V0001",
       "title": "الأخطبوط وقلوبه الثلاثة",
       "date": "2026-11-27",
+      "kind": "علمي",
       "links": {
         "youtube": "https://youtube.com/shorts/_wWERIlJOZw",
         "instagram": "https://www.instagram.com/halfnhalf_toons/reel/DgPlYbmSGBy/",
@@ -41,6 +43,7 @@
       "id": "FOOT-2026-11-27",
       "title": "كرة القدم — ٤ منشورات اليوم",
       "date": "2026-11-27",
+      "kind": "كرة قدم",
       "links": { "facebook": "https://www.facebook.com/profile.php?id=61597107325340" },
       "notes": { "facebook": "جدولة يومية: ١٠ منشورات" }
     }
