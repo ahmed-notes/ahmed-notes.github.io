@@ -22,6 +22,7 @@
     var box = $("#toasts");
     var t = h("div", { class: "toast", text: msg });
     box.appendChild(t);
+    t.addEventListener("click", function () { t.classList.add("out"); setTimeout(function () { t.remove(); }, 350); });
     setTimeout(function () { t.classList.add("out"); setTimeout(function () { t.remove(); }, 400); }, 2600);
   }
 
@@ -42,13 +43,16 @@
     burger.setAttribute("aria-expanded", open ? "true" : "false");
   });
   $$("#links a").forEach(function (a) { a.addEventListener("click", function () { links.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }); });
-  var lastY = 0, prog = $("#progress");
+  var lastY = 0, prog = $("#progress"), orbs = $$(".orb"), topBtn = $("#topBtn");
   window.addEventListener("scroll", function () {
     var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
     prog.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
     nav.classList.toggle("hide", y > lastY && y > 300 && !links.classList.contains("open"));
+    if (!reduce) orbs.forEach(function (o, i) { o.style.translate = "0 " + Math.round(y * (i ? -0.05 : 0.08)) + "px"; });
+    if (topBtn) topBtn.classList.toggle("show", y > 600);
     lastY = y;
   }, { passive: true });
+  if (topBtn) topBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
   var secs = $$("main section[id]");
   if ("IntersectionObserver" in window) {
     var so = new IntersectionObserver(function (es) {
@@ -239,6 +243,7 @@
   });
   document.addEventListener("keydown", function (e) {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); openCmd(); }
+    if (e.key === "/" && !e.ctrlKey && !e.metaKey && !/INPUT|TEXTAREA/.test((document.activeElement || {}).tagName || "")) { e.preventDefault(); openCmd(); }
     if (e.key === "Escape") { closeCmd(); if (!modal.hidden) closeModal(); }
   });
 
